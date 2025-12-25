@@ -1,0 +1,164 @@
+import React from 'react';
+import Typewriter from 'typewriter-effect';
+import { motion } from 'framer-motion';
+import { 
+  Github, Linkedin, Mail, Layers, Pen, Coffee, ExternalLink, Database, 
+  Code, Terminal, Spotlight, MonitorCog, CaseUpper, BarChart3 } from 'lucide-react';
+
+const App = () => {
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
+      {/* Navigation */}
+      <nav className="fixed top-0 bg-slate-50 left-0 w-full flex justify-between items-center px-[10%] py-10">
+        <div className="text-xl font-bold text-amber-600">Sandy Yang</div>
+        <div className="hidden md:flex gap-8 items-center font-medium text-slate-600">
+          <a href="#projects" 
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+              }}
+          className="hover:text-amber-600 transition">Projects</a>
+          <a href="#about" 
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+              }}          
+             className="text-black-600 hover:text-amber-600 transition">About</a>
+          <button className="bg-amber-600 text-white px-6 py-2 rounded-full hover:bg-amber-700 transition shadow-md">
+            Contact Me
+          </button>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <header className="h-[60vh] flex flex-col justify-center items-center text-center px-4 pt-[150px]" id="about">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-4">
+            Hi, I'm <span className="text-amber-600">Sandy!</span>
+          </h1>
+          
+          <div className="text-2xl md:text-3xl flex gap-3 justify-center text-slate-600 h-10">
+            <span>I am a </span>
+            <span className="font-bold text-slate-900">
+              <Typewriter
+                options={{
+                  strings: ['Data Scientist', 'Data Analyst', 'ML Engineer', 'Data Storyteller'],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </span>
+          </div>
+
+          <p className="max-w-2xl mt-6 text-lg text-slate-500 leading-relaxed">
+            I build data-driven solutions and translate complex numbers into 
+            beautiful, actionable narratives.
+          </p>
+
+          <div className="flex gap-6 justify-center mt-8">
+              <a href="https://github.com/s21dyY" target="_blank" rel="noreferrer">
+                <Github className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
+              </a>
+              <a href="https://www.linkedin.com/in/sandy-yang-538b12193/" target="_blank" rel="noreferrer">
+                <Linkedin className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
+              </a>
+              <a href="mailto:sandy.yang992@gmail.com">
+                <Mail className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
+              </a>
+              <a href="https://medium.com/@sandy.yang992" target="_blank" rel="noreferrer">
+                <Pen className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
+              </a>
+            </div>
+        </motion.div>
+      </header>
+
+      {/* Skills Row */}
+      <div className="flex flex-wrap justify-center gap-4 pb-5 pt-[20px]">
+        <SkillBadge icon={<Database size={18}/>} text="SQL" />
+        <SkillBadge icon={<Code size={18}/>} text="Python" />
+        <SkillBadge icon={<Terminal size={18}/>} text="PyTorch"/>
+        <SkillBadge icon={<Coffee size={18}/>} text="Java" />
+      </div>
+      <div className = "flex flex-wrap justify-center gap-4 pb-20">
+        <SkillBadge icon={<Spotlight size={18}/>} text="Power BI" />
+        <SkillBadge icon={<CaseUpper size={18}/>} text="AB Testing" />
+        <SkillBadge icon={<MonitorCog size={18}/>} text="Machine Learning" />
+      </div>
+
+      {/* Projects*/}
+      <section id="projects" className="min-h-screen px-[10%] py-20 bg-slate-50">
+        <h2 className="text-4xl font-bold mb-12 text-slate-900">Featured Projects</h2>
+        {/* Changed grid-cols-1 to md:grid-cols-2 to allow side-by-side layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          
+          {/* Card 1: AI Job Matcher */}
+          <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div className="flex justify-between items-start mb-4">
+              <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                <Layers size={24} />
+              </div>
+              <div className="flex gap-3 text-slate-400">
+                <Github size={20} className="hover:text-slate-900 cursor-pointer" />
+                <ExternalLink size={20} className="hover:text-slate-900 cursor-pointer" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-3">AI Job Matcher</h3>
+            <p className="text-slate-600 leading-relaxed mb-6">
+              An intelligent system for generating contextually appropriate replies in professional conversations, 
+              leveraging NLP to streamline networking.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Python</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">LLMs</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Pydantic</span>
+
+            </div>
+          </div>
+
+          {/* Card 2: Sentiment Analysis */}
+          <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div className="flex justify-between items-start mb-4">
+              <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                <BarChart3 size={24} />
+              </div>
+              <div className="flex gap-3 text-slate-400">
+                <a href="https://github.com/s21dyY/sentiment-analysis-app" target="_blank" rel="noreferrer">
+                  <Github size={20} className="hover:text-slate-900 cursor-pointer"/>
+                </a>
+                <a href="https://sy-lstm.streamlit.app/" target="_blank" rel="noreferrer"> 
+                  <ExternalLink size={20} className="hover:text-slate-900 cursor-pointer" />
+                </a>
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-3">Sentiment Analysis</h3>
+            <p className="text-slate-600 leading-relaxed mb-6">
+              Real-time analysis of social media trends using BERT models to classify customer sentiment 
+              and emotional triggers.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">PyTorch</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">NLP</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">LSTM</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Streamlit</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+};
+
+// Reusable Skill Badge Component
+const SkillBadge = ({ icon, text }) => (
+  <div className="flex items-center gap-2 bg-white px-5 py-2 rounded-full shadow-sm border border-slate-100 font-semibold text-sm hover:shadow-md transition">
+    <span className="text-amber-500">{icon}</span>
+    {text}
+  </div>
+);
+
+export default App;
