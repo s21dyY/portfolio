@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
       {/* Navigation */}
-      <nav className="fixed top-0 bg-slate-50 left-0 w-full flex justify-between items-center px-[10%] py-10">
+      <nav className="fixed top-0 bg-slate-50 left-0 w-full flex justify-between items-center px-6 md:px-[10%] py-6 md:py-10">
         <div className="text-xl font-bold text-amber-600">Sandy Yang</div>
         <div className="hidden md:flex gap-8 items-center font-medium text-slate-600">
           <a href="#projects" 
@@ -24,20 +24,22 @@ const App = () => {
                 document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
               }}          
              className="text-black-600 hover:text-amber-600 transition">About</a>
-          <button className="bg-amber-600 text-white px-6 py-2 rounded-full hover:bg-amber-700 transition shadow-md">
-            Contact Me
-          </button>
+          <a href="mailto:sandy.yang992@gmail.com">
+            <button className="bg-amber-600 text-white px-6 py-2 rounded-full hover:bg-amber-700 transition shadow-md">
+              Contact Me
+            </button>
+          </a>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <header className="h-[60vh] flex flex-col justify-center items-center text-center px-4 pt-[150px]" id="about">
+      <header className="min-h-[70vh] flex flex-col justify-center items-center text-center px-6 pt-[100px] md:pt-[150px]" id="about">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-4">
+          <h1 className="text-4xl md:text-7xl font-extrabold mb-4">
             Hi, I'm <span className="text-amber-600">Sandy!</span>
           </h1>
           
@@ -77,13 +79,12 @@ const App = () => {
       </header>
 
       {/* Skills Row */}
-      <div className="flex flex-wrap justify-center gap-4 pb-5 pt-[20px]">
+      <div className="flex flex-wrap justify-center gap-3 px-6 pb-20 pt-10 max-w-4xl mx-auto">
         <SkillBadge icon={<Database size={18}/>} text="SQL" />
         <SkillBadge icon={<Code size={18}/>} text="Python" />
         <SkillBadge icon={<Terminal size={18}/>} text="PyTorch"/>
+        <SkillBadge icon={<Terminal size={18}/>} text="TensorFlow"/>
         <SkillBadge icon={<Coffee size={18}/>} text="Java" />
-      </div>
-      <div className = "flex flex-wrap justify-center gap-4 pb-20">
         <SkillBadge icon={<Spotlight size={18}/>} text="Power BI" />
         <SkillBadge icon={<CaseUpper size={18}/>} text="AB Testing" />
         <SkillBadge icon={<MonitorCog size={18}/>} text="Machine Learning" />
@@ -92,7 +93,7 @@ const App = () => {
       {/* Projects*/}
       <section id="projects" className="min-h-screen px-[10%] py-20 bg-slate-50">
         <h2 className="text-4xl font-bold mb-12 text-slate-900">Featured Projects</h2>
-        {/* Changed grid-cols-1 to md:grid-cols-2 to allow side-by-side layout */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           
           {/* Card 1: AI Job Matcher */}
