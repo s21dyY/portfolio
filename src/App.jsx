@@ -95,8 +95,31 @@ const App = () => {
         <h2 className="text-4xl font-bold mb-12 text-slate-900">Featured Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* What to eat today */}
+          <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div className="flex justify-between items-start mb-4">
+              <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                <Layers size={24} />
+              </div>
+              <div className="flex gap-3 text-slate-400">
+                <a href="" target="_blank" rel="noreferrer">
+                <Github size={20} className="hover:text-slate-900 cursor-pointer" />
+                </a>
+                <a href="" target="_blank" rel="noreferrer">
+                  <ExternalLink size={20} className="hover:text-slate-900 cursor-pointer" />
+                </a>
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-3">What To Eat Today</h3>
+            <p className="text-slate-600 leading-relaxed mb-6">
+              An AI assistance to help decide what to cook for meals. Thank you mom for 
+              the project idea.
+            </p>
+            <div className="flex flex-wrap gap-2">
+            </div>
+          </div>
           
-          {/* Card 1: Smart Audit */}
+          {/* Smart Audit */}
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
               <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
@@ -126,7 +149,7 @@ const App = () => {
             </div>
           </div>
 
-          {/* Card 2: Sentiment Analysis */}
+          {/* Sentiment Analysis */}
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
               <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
