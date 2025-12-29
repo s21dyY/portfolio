@@ -103,7 +103,7 @@ const App = () => {
                 <Layers size={24} />
               </div>
               <div className="flex gap-3 text-slate-400">
-                <a href="https://github.com/s21dyY/smart-audit-ai" target="_blank" rel="noreferrer">
+                <a href="https://github.com/s21dyY/smart-audit" target="_blank" rel="noreferrer">
                 <Github size={20} className="hover:text-slate-900 cursor-pointer" />
                 </a>
                 <a href="http://smart-audit-frontend.s3-website.us-east-2.amazonaws.com/" target="_blank" rel="noreferrer">
