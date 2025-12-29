@@ -112,10 +112,14 @@ const App = () => {
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3">What To Eat Today</h3>
             <p className="text-slate-600 leading-relaxed mb-6">
-              An AI assistance to help decide what to cook for meals. Thank you mom for 
-              the project idea.
+              [In Progress...] 
+              An AI assistance to help decide what to cook for meals based on avaliable material. 
+              Thank you mom for the inspiration!
+              Thank you Harper for the expiration date tracking idea!
             </p>
             <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-bold uppercase">Next.js</span>
+              <span className="px-3 py-1 bg-amber-50 text-amber-600 rounded-md text-xs font-bold uppercase">supabase</span>
             </div>
           </div>
           
