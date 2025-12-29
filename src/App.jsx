@@ -104,19 +104,22 @@ const App = () => {
               </div>
               <div className="flex gap-3 text-slate-400">
                 <Github size={20} className="hover:text-slate-900 cursor-pointer" />
-                <ExternalLink size={20} className="hover:text-slate-900 cursor-pointer" />
+                <a href="http://smart-audit-frontend.s3-website.us-east-2.amazonaws.com/">
+                  <ExternalLink size={20} className="hover:text-slate-900 cursor-pointer" />
+                </a>
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-3">AI Job Matcher</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mb-3">Smart Audit</h3>
             <p className="text-slate-600 leading-relaxed mb-6">
-              An intelligent system for generating contextually appropriate replies in professional conversations, 
-              leveraging NLP to streamline networking.
+              An intelligent system for generating contextually appropriate audit rule.
             </p>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Python</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">LLMs</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Pydantic</span>
-
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">FastAPI</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">AWS EC2</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">React</span>
             </div>
           </div>
 
