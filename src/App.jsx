@@ -96,7 +96,7 @@ const App = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           
-          {/* Card 1: AI Job Matcher */}
+          {/* Card 1: Smart Audit */}
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
               <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
@@ -109,17 +109,18 @@ const App = () => {
                 </a>
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-3">Smart Audit</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mb-3">Smart Audit AI</h3>
             <p className="text-slate-600 leading-relaxed mb-6">
-              An intelligent system for generating contextually appropriate audit rule.
+              A full-stack AI orchestration engine that generates context-aware audit rules using LLMs. 
+              Features a <strong>containerized FastAPI backend</strong> on AWS EC2 and a <strong>decoupled React frontend</strong> 
+              hosted on S3, integrated via a custom-tuned CORS policy and cross-platform Docker builds.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Python</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">LLMs</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Pydantic</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">FastAPI</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">AWS EC2</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">React</span>
+              <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-bold uppercase">FastAPI & Pydantic</span>
+              <span className="px-3 py-1 bg-amber-50 text-amber-600 rounded-md text-xs font-bold uppercase">Gemini LLM</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Docker Buildx</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">AWS ECR & EC2</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">S3 Hosting</span>
             </div>
           </div>
 
