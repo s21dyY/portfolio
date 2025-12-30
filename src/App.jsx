@@ -10,7 +10,10 @@ const App = () => {
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
       {/* Navigation */}
       <nav className="fixed top-0 bg-slate-50 left-0 w-full flex justify-between items-center px-6 md:px-[10%] py-6 md:py-10">
-        <div className="text-xl font-bold text-amber-600">Sandy Yang</div>
+        <div className="text-xl font-bold text-amber-600">
+          <img src="https://www.svgrepo.com/show/362047/cat.svg" height="20px"/>
+          Sandy Yang
+        </div>
         <div className="hidden md:flex gap-8 items-center font-medium text-slate-600">
           <a href="#projects" 
               onClick={(e) => {
@@ -99,7 +102,7 @@ const App = () => {
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
               <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold">W</div>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold">W</div>
               </div>
               <div className="flex gap-3 text-slate-400">
                 <a href="https://github.com/s21dyY/what-to-eat-today" target="_blank" rel="noreferrer" aria-label="GitHub Repository">
@@ -115,10 +118,10 @@ const App = () => {
               An AI-powered kitchen assistant aimed to solve the "what's for dinner" dilemma. It  tracks pantry inventory and expiration dates, using the Groq LPU to generate instant recipes based on selected ingredients.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold">TypeScript</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold">Next.js</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold">Supabase</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold">Groq AI</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">TypeScript</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Next.js</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Supabase</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Groq AI</span>
             </div>
           </div>
           
