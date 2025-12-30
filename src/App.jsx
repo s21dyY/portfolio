@@ -99,13 +99,13 @@ const App = () => {
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
               <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                <Layers size={24} />
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold">W</div>
               </div>
               <div className="flex gap-3 text-slate-400">
                 <a href="" target="_blank" rel="noreferrer">
                 <Github size={20} className="hover:text-slate-900 cursor-pointer" />
                 </a>
-                <a href="" target="_blank" rel="noreferrer">
+                <a href="https://what-to-eat-today-six.vercel.app" target="_blank" rel="noreferrer">
                   <ExternalLink size={20} className="hover:text-slate-900 cursor-pointer" />
                 </a>
               </div>
@@ -120,6 +120,7 @@ const App = () => {
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-bold uppercase">Next.js</span>
               <span className="px-3 py-1 bg-amber-50 text-amber-600 rounded-md text-xs font-bold uppercase">supabase</span>
+              <span className="px-3 py-1 bg-amber-50 text-amber-600 rounded-md text-xs font-bold uppercase">Groq API</span>
             </div>
           </div>
           
