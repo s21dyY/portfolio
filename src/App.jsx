@@ -59,8 +59,7 @@ const App = () => {
           </div>
 
           <p className="max-w-2xl mt-6 text-lg text-slate-500 leading-relaxed">
-            I build data-driven solutions and translate complex numbers into 
-            beautiful, actionable narratives.
+            I build data-driven tools that help people make better decisions.
           </p>
 
           <div className="flex gap-6 justify-center mt-8">
@@ -141,16 +140,14 @@ const App = () => {
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3">Smart Audit AI</h3>
             <p className="text-slate-600 leading-relaxed mb-6">
-              A full-stack AI orchestration engine that generates context-aware audit rules using LLMs. 
-              Features a <strong>containerized FastAPI backend</strong> on AWS EC2 and a <strong>decoupled React frontend</strong> 
-              hosted on S3, integrated via a custom-tuned CORS policy and cross-platform Docker builds.
+              A system designed to automate complex compliance checks using AI. I built a containerized FastAPI backend to handle high-speed LLM orchestration and paired it with a decoupled React frontend. The project focuses on infrastructure reliability, featuring automated Docker deployments and a secure AWS-hosted environment.
             </p>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold  uppercase">FastAPI & Pydantic</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold  uppercase">Gemini LLM</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Docker Buildx</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">AWS ECR & EC2</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">S3 Hosting</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Docker</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">AWS (EC2/S3)</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">LLM Prompt Engineering</span>
             </div>
           </div>
 
@@ -171,11 +168,10 @@ const App = () => {
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3">Sentiment Analysis</h3>
             <p className="text-slate-600 leading-relaxed mb-6">
-              Real-time analysis of social media trends using BERT models to classify customer sentiment 
-              and emotional triggers.
+              This project uses machine learning pipeline to decode the emotional nuances of social media reviews. Using BERT-based sentiment analysis, the tool transforms thousands of unstructured posts into structured data, identifying specific triggers and shifts in public opinion in real-time.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">PyTorch</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">BERT</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">NLP</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">LSTM</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Streamlit</span>
