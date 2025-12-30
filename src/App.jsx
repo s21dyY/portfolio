@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
 import { 
   Github, Linkedin, Mail, Layers, Pen, Coffee, ExternalLink, Database, 
-  Code, Terminal, Spotlight, MonitorCog, CaseUpper, BarChart3 } from 'lucide-react';
+  Code, Terminal, Spotlight, MonitorCog, CaseUpper, BarChart3, CookingPot } from 'lucide-react';
 
 const App = () => {
   return (
@@ -102,7 +102,7 @@ const App = () => {
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
               <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold">W</div>
+                 <CookingPot size={24} />
               </div>
               <div className="flex gap-3 text-slate-400">
                 <a href="https://github.com/s21dyY/what-to-eat-today" target="_blank" rel="noreferrer" aria-label="GitHub Repository">
