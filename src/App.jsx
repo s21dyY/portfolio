@@ -11,7 +11,6 @@ const App = () => {
       {/* Navigation */}
       <nav className="fixed top-0 bg-slate-50 left-0 w-full flex justify-between items-center px-6 md:px-[10%] py-6 md:py-10">
         <div className="text-xl font-bold text-amber-600">
-          <img src="https://www.svgrepo.com/show/362047/cat.svg" height="20px"/>
           Sandy Yang
         </div>
         <div className="hidden md:flex gap-8 items-center font-medium text-slate-600">
