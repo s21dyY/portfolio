@@ -112,15 +112,13 @@ const App = () => {
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3">What To Eat Today</h3>
             <p className="text-slate-600 leading-relaxed mb-6">
-              [In Progress...] 
-              An AI-powered meal planner that generates custom recipes based on your available ingredients. 
-              Includes smart expiration tracking to minimize food waste.
-              Special thanks to my mom and my roomate Harper.
+              An AI-powered kitchen assistant aimed to solve the "what's for dinner" dilemma. It  tracks pantry inventory and expiration dates, using the Groq LPU to generate instant recipes based on selected ingredients.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-bold uppercase">Next.js</span>
-              <span className="px-3 py-1 bg-amber-50 text-amber-600 rounded-md text-xs font-bold uppercase">Supabase</span>
-              <span className="px-3 py-1 bg-amber-50 text-amber-600 rounded-md text-xs font-bold uppercase">Groq AI</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold">TypeScript</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold">Next.js</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold">Supabase</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold">Groq AI</span>
             </div>
           </div>
           
@@ -146,8 +144,8 @@ const App = () => {
               hosted on S3, integrated via a custom-tuned CORS policy and cross-platform Docker builds.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-bold uppercase">FastAPI & Pydantic</span>
-              <span className="px-3 py-1 bg-amber-50 text-amber-600 rounded-md text-xs font-bold uppercase">Gemini LLM</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold  uppercase">FastAPI & Pydantic</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold  uppercase">Gemini LLM</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Docker Buildx</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">AWS ECR & EC2</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">S3 Hosting</span>
