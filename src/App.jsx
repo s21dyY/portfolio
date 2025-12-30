@@ -102,10 +102,10 @@ const App = () => {
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold">W</div>
               </div>
               <div className="flex gap-3 text-slate-400">
-                <a href="" target="_blank" rel="noreferrer">
-                <Github size={20} className="hover:text-slate-900 cursor-pointer" />
+                <a href="https://github.com/s21dyY/what-to-eat-today" target="_blank" rel="noreferrer" aria-label="GitHub Repository">
+                  <Github size={20} className="hover:text-slate-900 cursor-pointer" />
                 </a>
-                <a href="https://what-to-eat-today-six.vercel.app" target="_blank" rel="noreferrer">
+                <a href="https://what-to-eat-today-six.vercel.app" target="_blank" rel="noreferrer" aria-label="Live Demo">
                   <ExternalLink size={20} className="hover:text-slate-900 cursor-pointer" />
                 </a>
               </div>
@@ -113,14 +113,14 @@ const App = () => {
             <h3 className="text-2xl font-bold text-slate-900 mb-3">What To Eat Today</h3>
             <p className="text-slate-600 leading-relaxed mb-6">
               [In Progress...] 
-              An AI assistance to help decide what to cook for meals based on avaliable material. 
-              Thank you mom for the inspiration!
-              Thank you Harper for the expiration date tracking idea!
+              An AI-powered meal planner that generates custom recipes based on your available ingredients. 
+              Includes smart expiration tracking to minimize food waste.
+              Special thanks to my mom and my roomate Harper.
             </p>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-bold uppercase">Next.js</span>
-              <span className="px-3 py-1 bg-amber-50 text-amber-600 rounded-md text-xs font-bold uppercase">supabase</span>
-              <span className="px-3 py-1 bg-amber-50 text-amber-600 rounded-md text-xs font-bold uppercase">Groq API</span>
+              <span className="px-3 py-1 bg-amber-50 text-amber-600 rounded-md text-xs font-bold uppercase">Supabase</span>
+              <span className="px-3 py-1 bg-amber-50 text-amber-600 rounded-md text-xs font-bold uppercase">Groq AI</span>
             </div>
           </div>
           
