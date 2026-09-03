@@ -71,7 +71,7 @@ const App = () => {
           </p>
 
           <div className="flex gap-4 justify-center mt-8">
-            <a href="/Sandy_Yang_Resume.pdf" target="_blank" rel="noreferrer">
+            <a href="/Resume_Sandy_Yang.pdf" target="_blank" rel="noreferrer">
               <button className="bg-amber-600 text-white px-6 py-2.5 rounded-full hover:bg-amber-700 transition shadow-md font-medium">
                 View Resume
               </button>
