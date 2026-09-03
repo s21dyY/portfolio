@@ -51,7 +51,7 @@ const App = () => {
             <span className="font-bold text-slate-900">
               <Typewriter
                 options={{
-                  strings: ['ML Engineer', 'Data Analyst', 'Data Scientist', 'Data Storyteller'],
+                  strings: ['ML Engineer', 'Data Scientist', 'Data Storyteller'],
                   autoStart: true,
                   loop: true,
                 }}
@@ -97,6 +97,57 @@ const App = () => {
         <h2 className="text-4xl font-bold mb-12 text-slate-900">Featured Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          
+          {/* SLB Reservoir Performance Automation — NDA-covered */}
+          <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div className="flex justify-between items-start mb-4">
+              <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                <Cpu size={24} />
+              </div>
+              <div className="flex items-center gap-1.5 text-slate-400" title="Confidential — covered under NDA">
+                <Lock size={16} />
+                <span className="text-xs font-semibold uppercase tracking-wide">NDA</span>
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-3">Reservoir Performance Automation</h3>
+            <p className="text-slate-600 leading-relaxed mb-6">
+              Designed a configuration-driven automation platform that turns engineering requirements into standardized test plans and reports,
+              with a locally-hosted LLM generating structured documentation to cut a manual planning process from
+              roughly 16 hours down to a fraction of that. Internal workflows, data, and proprietary logic are
+              covered under a signed NDA and aren't shown here.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Python</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">LLM Integration</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Ollama</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Workflow Automation</span>
+            </div>
+          </div>      
+          {/* Refrigerant Leak Detection — NDA-covered */}
+          <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div className="flex justify-between items-start mb-4">
+              <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                <Snowflake size={24} />
+              </div>
+              <div className="flex items-center gap-1.5 text-slate-400" title="Confidential — covered under NDA">
+                <Lock size={16} />
+                <span className="text-xs font-semibold uppercase tracking-wide">NDA</span>
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-3">Refrigerant Leak Detection</h3>
+            <p className="text-slate-600 leading-relaxed mb-6">
+              Built with an industry sponsor through CMU's Corporate Startup Lab. Trained and tuned an ML
+              classification model to flag refrigerant leaks from sensor and equipment data, engineering features
+              to improve detection reliability and cut down false positives. The sponsor's identity, dataset, and
+              exact model architecture are covered under a signed NDA and aren't shown here.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Python</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Feature Engineering</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Classification Modeling</span>
+            </div>
+          </div>
+
           {/* What to eat today */}
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
@@ -123,34 +174,7 @@ const App = () => {
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Groq AI</span>
             </div>
           </div>
-          
-          {/* Smart Audit */}
-          <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-            <div className="flex justify-between items-start mb-4">
-              <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                <Layers size={24} />
-              </div>
-              <div className="flex gap-3 text-slate-400">
-                <a href="https://github.com/s21dyY/smart-audit" target="_blank" rel="noreferrer">
-                <Github size={20} className="hover:text-slate-900 cursor-pointer" />
-                </a>
-                <a href="http://smart-audit-frontend.s3-website.us-east-2.amazonaws.com/" target="_blank" rel="noreferrer">
-                  <ExternalLink size={20} className="hover:text-slate-900 cursor-pointer" />
-                </a>
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-3">Smart Audit AI</h3>
-            <p className="text-slate-600 leading-relaxed mb-6">
-              A system designed to automate complex compliance checks using AI. I built a containerized FastAPI backend to handle high-speed LLM orchestration and paired it with a decoupled React frontend. The project focuses on infrastructure reliability, featuring automated Docker deployments and a secure AWS-hosted environment.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold  uppercase">FastAPI & Pydantic</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold  uppercase">Gemini LLM</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Docker</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">AWS (EC2/S3)</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">LLM Prompt Engineering</span>
-            </div>
-          </div>
+        
 
           {/* Sentiment Analysis */}
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
@@ -176,58 +200,6 @@ const App = () => {
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">NLP</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">LSTM</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Streamlit</span>
-            </div>
-          </div>
-
-          {/* SLB Reservoir Performance Automation — NDA-covered */}
-          <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-            <div className="flex justify-between items-start mb-4">
-              <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                <Cpu size={24} />
-              </div>
-              <div className="flex items-center gap-1.5 text-slate-400" title="Confidential — covered under NDA">
-                <Lock size={16} />
-                <span className="text-xs font-semibold uppercase tracking-wide">NDA</span>
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-3">Reservoir Performance Automation</h3>
-            <p className="text-slate-600 leading-relaxed mb-6">
-              Built during my Software Engineer internship at SLB (Schlumberger). Designed a configuration-driven
-              automation platform that turns engineering requirements into standardized test plans and reports,
-              with a locally-hosted LLM generating structured documentation to cut a manual planning process from
-              roughly 16 hours down to a fraction of that. Internal workflows, data, and proprietary logic are
-              covered under a signed NDA and aren't shown here.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Python</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">LLM Integration</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Ollama</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Workflow Automation</span>
-            </div>
-          </div>
-
-          {/* Refrigerant Leak Detection — NDA-covered */}
-          <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-            <div className="flex justify-between items-start mb-4">
-              <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                <Snowflake size={24} />
-              </div>
-              <div className="flex items-center gap-1.5 text-slate-400" title="Confidential — covered under NDA">
-                <Lock size={16} />
-                <span className="text-xs font-semibold uppercase tracking-wide">NDA</span>
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-3">Refrigerant Leak Detection</h3>
-            <p className="text-slate-600 leading-relaxed mb-6">
-              Built with an industry sponsor through CMU's Corporate Startup Lab. Trained and tuned an ML
-              classification model to flag refrigerant leaks from sensor and equipment data, engineering features
-              to improve detection reliability and cut down false positives. The sponsor's identity, dataset, and
-              exact model architecture are covered under a signed NDA and aren't shown here.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Python</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Feature Engineering</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Classification Modeling</span>
             </div>
           </div>
         </div>
