@@ -69,20 +69,6 @@ const App = () => {
             I help turn messy data and workflows into tools people
             actually use.
           </p>
-
-          <div className="flex gap-4 justify-center mt-8">
-            <a href="/Resume_Sandy_Yang.pdf" target="_blank" rel="noreferrer">
-              <button className="bg-amber-600 text-white px-6 py-2.5 rounded-full hover:bg-amber-700 transition shadow-md font-medium">
-                View Resume
-              </button>
-            </a>
-            <a href="mailto:sandy.yang992@gmail.com">
-              <button className="border border-slate-300 text-slate-700 px-6 py-2.5 rounded-full hover:border-amber-600 hover:text-amber-600 transition font-medium">
-                Contact Me
-              </button>
-            </a>
-          </div>
-
           <div className="flex gap-6 justify-center mt-8">
             <a href="https://github.com/s21dyY" target="_blank" rel="noreferrer">
               <Github className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
