@@ -42,7 +42,7 @@ const App = () => {
       </nav>
 
       {/* Hero Section */}
-      <header className="min-h-[70vh] flex flex-col justify-center items-center text-center px-6 pt-[100px] md:pt-[150px]" id="about">
+      <header className="min-h-[70vh] flex flex-col justify-center items-center text-center px-6 pt-[100px] md:pt-[150px]" id="hero">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ const App = () => {
             <span className="font-bold text-slate-900">
               <Typewriter
                 options={{
-                  strings: ['ML Engineer', 'Data Analyst', 'Data Scientist', 'Data Storyteller'],
+                  strings: ['ML Engineer', 'Data Scientist', 'Data Storyteller'],
                   autoStart: true,
                   loop: true,
                 }}
@@ -66,23 +66,37 @@ const App = () => {
           </div>
 
           <p className="max-w-2xl mt-6 text-lg text-slate-500 leading-relaxed">
-            I build data-driven tools that help people make better decisions.
+            I help turn messy data and workflows into tools people
+            actually use.
           </p>
 
+          <div className="flex gap-4 justify-center mt-8">
+            <a href="/Sandy_Yang_Resume.pdf" target="_blank" rel="noreferrer">
+              <button className="bg-amber-600 text-white px-6 py-2.5 rounded-full hover:bg-amber-700 transition shadow-md font-medium">
+                View Resume
+              </button>
+            </a>
+            <a href="mailto:sandy.yang992@gmail.com">
+              <button className="border border-slate-300 text-slate-700 px-6 py-2.5 rounded-full hover:border-amber-600 hover:text-amber-600 transition font-medium">
+                Contact Me
+              </button>
+            </a>
+          </div>
+
           <div className="flex gap-6 justify-center mt-8">
-              <a href="https://github.com/s21dyY" target="_blank" rel="noreferrer">
-                <Github className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
-              </a>
-              <a href="https://www.linkedin.com/in/sandy-yang-538b12193/" target="_blank" rel="noreferrer">
-                <Linkedin className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
-              </a>
-              <a href="mailto:sandy.yang992@gmail.com">
-                <Mail className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
-              </a>
-              <a href="https://medium.com/@sandy.yang992" target="_blank" rel="noreferrer">
-                <Pen className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
-              </a>
-            </div>
+            <a href="https://github.com/s21dyY" target="_blank" rel="noreferrer">
+              <Github className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
+            </a>
+            <a href="https://www.linkedin.com/in/sandy-yang-538b12193/" target="_blank" rel="noreferrer">
+              <Linkedin className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
+            </a>
+            <a href="mailto:sandy.yang992@gmail.com">
+              <Mail className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
+            </a>
+            <a href="https://medium.com/@sandy.yang992" target="_blank" rel="noreferrer">
+              <Pen className="cursor-pointer text-slate-400 hover:text-amber-600 transition" />
+            </a>
+          </div>
         </motion.div>
       </header>
 
