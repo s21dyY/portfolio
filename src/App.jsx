@@ -189,10 +189,7 @@ const App = () => {
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3">Refrigerant Leak Detection</h3>
             <p className="text-slate-600 leading-relaxed mb-6">
-              Built with an industry sponsor through CMU's Corporate Startup Lab. Trained and tuned an ML
-              classification model to flag refrigerant leaks from sensor and equipment data, engineering features
-              to improve detection reliability and cut down false positives. The sponsor's identity, dataset, and
-              exact model architecture are covered under a signed NDA and aren't shown here.
+              Partnered with an industry sponsor through CMU's Corporate Startup Lab as the data scientist on a cross-functional team. Built an end-to-end classification pipeline in Python, including cleaning multi-sensor time-series data, engineering features to capture leak signatures, and iterating on model selection and hyperparameters. Reaching 80% classification accuracy while cutting false positives to 10%, reducing unnecessary maintenance callouts.
             </p>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Python</span>
