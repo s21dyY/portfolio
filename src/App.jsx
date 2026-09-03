@@ -4,23 +4,29 @@ import { motion } from 'framer-motion';
 import {
   Github, Linkedin, Mail, Layers, Pen, Coffee, ExternalLink, Database,
   Code, Terminal, Spotlight, MonitorCog, CaseUpper, BarChart3, CookingPot,
-  Lock, Cpu, Snowflake } from 'lucide-react';
+  Lock, Cpu, Snowflake, Briefcase } from 'lucide-react';
 
 const App = () => {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
       {/* Navigation */}
-      <nav className="fixed top-0 bg-slate-50 left-0 w-full flex justify-between items-center px-6 md:px-[10%] py-6 md:py-10">
+      <nav className="fixed top-0 bg-slate-50 left-0 w-full flex justify-between items-center px-6 md:px-[10%] py-6 md:py-10 z-50">
         <div className="text-xl font-bold text-amber-600">
           Sandy Yang
         </div>
         <div className="hidden md:flex gap-8 items-center font-medium text-slate-600">
-          <a href="#projects" 
+          <a href="#projects"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
               }}
           className="hover:text-amber-600 transition">Projects</a>
+          <a href="#experience"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('experience').scrollIntoView({ behavior: 'smooth' });
+              }}
+          className="hover:text-amber-600 transition">Experience</a>
           <a href="#about" 
               onClick={(e) => {
                 e.preventDefault();
@@ -51,7 +57,7 @@ const App = () => {
             <span className="font-bold text-slate-900">
               <Typewriter
                 options={{
-                  strings: ['ML Engineer', 'Data Scientist', 'Data Storyteller'],
+                  strings: ['ML Engineer', 'Data Analyst', 'Data Scientist', 'Data Storyteller'],
                   autoStart: true,
                   loop: true,
                 }}
@@ -92,13 +98,54 @@ const App = () => {
         <SkillBadge icon={<MonitorCog size={18}/>} text="Machine Learning" />
       </div>
 
+      {/* Experience */}
+      <section id="experience" className="px-[10%] py-20 bg-white">
+        <h2 className="text-4xl font-bold mb-12 text-slate-900">Experience</h2>
+
+        <div className="relative border-l-2 border-slate-100 ml-3">
+          <ExperienceItem
+            title="Software Engineer Intern"
+            org="SLB (Schlumberger)"
+            location="Sugar Land, TX"
+            dates="Jun 2026 – Aug 2026"
+            bullets={[
+              'Developed end-to-end automation software for the Reservoir Performance Team, streamlining test planning and reporting.',
+              'Integrated a locally hosted LLM (Ollama) into the backend to generate structured plans and reports.',
+              'Designed a configuration-driven architecture to improve scalability and maintainability across future products.',
+            ]}
+          />
+          <ExperienceItem
+            title="Data Analyst"
+            org="WTW"
+            location="Taipei, Taiwan"
+            dates="Feb 2023 – Oct 2024"
+            bullets={[
+              'Built end-to-end data pipelines supporting monthly retraining of attrition prediction models.',
+              'Built Power BI dashboards tracking attrition and compensation benchmarks, cutting reporting time by 2 hrs/week.',
+              'Optimized ETL workflows with data engineers, reducing operational costs by $2K per month.',
+            ]}
+          />
+          <ExperienceItem
+            title="Data Analyst"
+            org="Pengo Technology Inc"
+            location="Taipei, Taiwan"
+            dates="Dec 2021 – Dec 2022"
+            bullets={[
+              'Developed ETL pipelines to ingest REST API data into SQL databases for reliable downstream reporting.',
+              'Built Power BI dashboards tracking conversion rates and funnel drop-offs to guide feature prioritization.',
+              'Designed and analyzed A/B experiments to evaluate feature performance.',
+            ]}
+            isLast
+          />
+        </div>
+      </section>
+
       {/* Projects*/}
       <section id="projects" className="min-h-screen px-[10%] py-20 bg-slate-50">
         <h2 className="text-4xl font-bold mb-12 text-slate-900">Featured Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          
-          {/* SLB Reservoir Performance Automation — NDA-covered */}
+                    {/* SLB Reservoir Performance Automation — NDA-covered */}
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
               <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
@@ -111,7 +158,8 @@ const App = () => {
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3">Reservoir Performance Automation</h3>
             <p className="text-slate-600 leading-relaxed mb-6">
-              Designed a configuration-driven automation platform that turns engineering requirements into standardized test plans and reports,
+              Built during my Software Engineer internship at SLB (Schlumberger). Designed a configuration-driven
+              automation platform that turns engineering requirements into standardized test plans and reports,
               with a locally-hosted LLM generating structured documentation to cut a manual planning process from
               roughly 16 hours down to a fraction of that. Internal workflows, data, and proprietary logic are
               covered under a signed NDA and aren't shown here.
@@ -122,7 +170,8 @@ const App = () => {
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Ollama</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Workflow Automation</span>
             </div>
-          </div>      
+          </div>
+
           {/* Refrigerant Leak Detection — NDA-covered */}
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
@@ -147,7 +196,6 @@ const App = () => {
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Classification Modeling</span>
             </div>
           </div>
-
           {/* What to eat today */}
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
@@ -174,7 +222,6 @@ const App = () => {
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Groq AI</span>
             </div>
           </div>
-        
 
           {/* Sentiment Analysis */}
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
@@ -214,6 +261,29 @@ const SkillBadge = ({ icon, text }) => (
   <div className="flex items-center gap-2 bg-white px-5 py-2 rounded-full shadow-sm border border-slate-100 font-semibold text-sm hover:shadow-md transition">
     <span className="text-amber-500">{icon}</span>
     {text}
+  </div>
+);
+
+// Reusable Experience Timeline Item
+const ExperienceItem = ({ title, org, location, dates, bullets, isLast }) => (
+  <div className={`relative pl-10 ${isLast ? '' : 'pb-12'}`}>
+    <span className="absolute -left-[9px] top-1.5 flex items-center justify-center w-4 h-4 rounded-full bg-amber-600 ring-4 ring-white" />
+    <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-1">
+      <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+        <Briefcase size={18} className="text-amber-600" />
+        {title}
+      </h3>
+      <span className="text-sm font-medium text-slate-400">{dates}</span>
+    </div>
+    <p className="text-slate-500 font-medium mb-3">{org} · {location}</p>
+    <ul className="space-y-1.5">
+      {bullets.map((b, i) => (
+        <li key={i} className="text-slate-600 leading-relaxed flex gap-2">
+          <span className="text-amber-600 mt-1">•</span>
+          <span>{b}</span>
+        </li>
+      ))}
+    </ul>
   </div>
 );
 
