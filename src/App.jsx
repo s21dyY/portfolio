@@ -94,6 +94,7 @@ const App = () => {
         <SkillBadge icon={<Terminal size={18}/>} text="TensorFlow"/>
         <SkillBadge icon={<Coffee size={18}/>} text="Java" />
         <SkillBadge icon={<Spotlight size={18}/>} text="Power BI" />
+         <SkillBadge icon={<Cpu size={18}/>} text="Distributed Systems" />
         <SkillBadge icon={<CaseUpper size={18}/>} text="AB Testing" />
         <SkillBadge icon={<MonitorCog size={18}/>} text="Machine Learning" />
       </div>
@@ -110,6 +111,7 @@ const App = () => {
             dates="Jun 2026 – Aug 2026"
             bullets={[
               'Developed end-to-end automation software for the Reservoir Performance Team, streamlining test planning and reporting.',
+              'Automated a 16-hour VV planning workflow, targeting a 50% reduction in processing time and 0.4 FTE in labor savings.',
               'Integrated a locally hosted LLM (Ollama) into the backend to generate structured plans and reports.',
               'Designed a configuration-driven architecture to improve scalability and maintainability across future products.',
             ]}
@@ -121,8 +123,9 @@ const App = () => {
             dates="Feb 2023 – Oct 2024"
             bullets={[
               'Built end-to-end data pipelines supporting monthly retraining of attrition prediction models.',
+              'Optimized ETL workflows in partnership with data engineers, reducing operational costs by $2K per month.',
               'Built Power BI dashboards tracking attrition and compensation benchmarks, cutting reporting time by 2 hrs/week.',
-              'Optimized ETL workflows with data engineers, reducing operational costs by $2K per month.',
+              'Synthesized market and social media analytics into actionable insights to support client strategy.',
             ]}
           />
           <ExperienceItem
@@ -131,9 +134,10 @@ const App = () => {
             location="Taipei, Taiwan"
             dates="Dec 2021 – Dec 2022"
             bullets={[
-              'Developed ETL pipelines to ingest REST API data into SQL databases for reliable downstream reporting.',
-              'Built Power BI dashboards tracking conversion rates and funnel drop-offs to guide feature prioritization.',
-              'Designed and analyzed A/B experiments to evaluate feature performance.',
+              'Developed ETL pipelines to ingest REST API data into SQL databases, enabling reliable downstream reporting.',
+              'Built Power BI dashboards tracking conversion rates and funnel drop-offs, enabling PMs to prioritize features.',
+              'Designed and analyzed A/B experiments to evaluate feature performance and inform product prioritization.',
+              'Automated reporting workflows, reducing manual work by 10 hours per week.',
             ]}
             isLast
           />
