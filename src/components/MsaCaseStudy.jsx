@@ -2,7 +2,7 @@ import React from 'react';
 import { Snowflake } from 'lucide-react';
 import { msaCaseStudy } from '../data/msaCaseStudy';
 import CaseStudyCard from './CaseStudyCard';
-import { SectionLabel, StepFlow, StepGrid, CardGrid, TagList } from './caseStudyPrimitives';
+import { SectionLabel, StepFlow, CardGrid, TagList } from './caseStudyPrimitives';
 import MsaDemo from './MsaDemo';
 
 const MsaCaseStudy = ({ highlighted }) => (
@@ -33,11 +33,6 @@ const MsaCaseStudy = ({ highlighted }) => (
     </div>
 
     <div className="mb-10">
-      <SectionLabel>The Technical Pipeline</SectionLabel>
-      <StepGrid items={msaCaseStudy.technicalPipeline} />
-    </div>
-
-    <div className="mb-10">
       <SectionLabel>{msaCaseStudy.featureEngineering.title}</SectionLabel>
       <p className="text-slate-700 leading-relaxed mb-4">{msaCaseStudy.featureEngineering.description}</p>
       <div className="grid sm:grid-cols-3 gap-6">
@@ -50,6 +45,10 @@ const MsaCaseStudy = ({ highlighted }) => (
       </div>
     </div>
 
+    <div className="mb-10 bg-slate-50 border border-slate-200 rounded-2xl p-6">
+      <MsaDemo />
+    </div>
+
     <div className="mb-10 bg-amber-50 border border-amber-200 rounded-2xl p-6">
       <p className="text-xs font-bold uppercase tracking-widest text-amber-700 mb-2">{msaCaseStudy.failureAnalysis.eyebrow}</p>
       <p className="font-semibold text-slate-900 text-lg mb-3">{msaCaseStudy.failureAnalysis.title}</p>
@@ -59,18 +58,10 @@ const MsaCaseStudy = ({ highlighted }) => (
     </div>
 
     <div className="mb-10">
-      <SectionLabel>{msaCaseStudy.evaluation.title}</SectionLabel>
+      <SectionLabel>{msaCaseStudy.result.title}</SectionLabel>
       <p className="text-slate-700 leading-relaxed mb-4">{msaCaseStudy.evaluation.description}</p>
       <TagList items={msaCaseStudy.evaluation.metrics} />
-    </div>
-
-    <div className="mb-10">
-      <MsaDemo />
-    </div>
-
-    <div className="mb-10">
-      <SectionLabel>{msaCaseStudy.result.title}</SectionLabel>
-      <p className="text-slate-700 leading-relaxed">{msaCaseStudy.result.description}</p>
+      <p className="text-slate-700 leading-relaxed mt-6">{msaCaseStudy.result.description}</p>
       <p className="text-sm text-slate-400 italic mt-3">{msaCaseStudy.result.note}</p>
     </div>
 

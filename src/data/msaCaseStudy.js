@@ -65,39 +65,6 @@ export const msaCaseStudy = {
     },
   ],
 
-  technicalPipeline: [
-    {
-      number: '01',
-      title: 'Ingest',
-      description: 'Load and validate multiple sources of HVAC sensor and detection data.',
-    },
-    {
-      number: '02',
-      title: 'Align',
-      description: 'Synchronize sensor streams collected at different frequencies onto a common time axis.',
-    },
-    {
-      number: '03',
-      title: 'Engineer',
-      description: 'Create domain-informed features from relationships among temperature, pressure, energy use, and other operating signals.',
-    },
-    {
-      number: '04',
-      title: 'Transform',
-      description: 'Generate rolling statistics, lagged values, and change-based features to capture temporal behavior.',
-    },
-    {
-      number: '05',
-      title: 'Model',
-      description: 'Evaluate classification models across multiple feature configurations and operating conditions.',
-    },
-    {
-      number: '06',
-      title: 'Evaluate',
-      description: 'Analyze discrimination, precision/recall tradeoffs, and false-alarm behavior rather than relying on a single accuracy metric.',
-    },
-  ],
-
   featureEngineering: {
     title: 'From raw readings to system behavior',
     description:
@@ -174,22 +141,27 @@ export const msaCaseStudy = {
 // Synthetic values only — do not represent MSA Safety data. See `disclaimer`,
 // which is rendered prominently wherever this is used.
 export const msaDemo = {
-  label: 'Simplified Example',
+  label: 'Watch It Work',
+  title: 'A synthetic leak event, detected step by step',
+  description:
+    'This replays a simplified sensor stream through the same pipeline stages described above, using synthetic data designed to illustrate the approach — not real sensor readings.',
   disclaimer:
     'Synthetic values are used below to demonstrate the modeling approach. They do not represent MSA Safety data.',
+  stages: ['Ingest', 'Align', 'Engineer', 'Classify', 'Alert'],
   normal: [
     { time: '10:00', pressure: 42, temperature: 68 },
-    { time: '10:05', pressure: 42, temperature: 69 },
-    { time: '10:10', pressure: 41, temperature: 68 },
-    { time: '10:15', pressure: 42, temperature: 69 },
-    { time: '10:20', pressure: 41, temperature: 68 },
+    { time: '10:04', pressure: 42, temperature: 68 },
+    { time: '10:08', pressure: 41, temperature: 69 },
+    { time: '10:12', pressure: 42, temperature: 68 },
+    { time: '10:16', pressure: 41, temperature: 69 },
+    { time: '10:20', pressure: 42, temperature: 68 },
   ],
   anomaly: [
-    { time: '10:00', pressure: 42, temperature: 68 },
-    { time: '10:05', pressure: 41, temperature: 69 },
-    { time: '10:10', pressure: 40, temperature: 70 },
-    { time: '10:15', pressure: 37, temperature: 73 },
-    { time: '10:20', pressure: 35, temperature: 76 },
+    { time: '10:00', pressure: 42, temperature: 68, risk: 0.04 },
+    { time: '10:04', pressure: 41, temperature: 69, risk: 0.07 },
+    { time: '10:08', pressure: 40, temperature: 70, risk: 0.16 },
+    { time: '10:12', pressure: 38, temperature: 72, risk: 0.34 },
+    { time: '10:16', pressure: 36, temperature: 75, risk: 0.61 },
+    { time: '10:20', pressure: 33, temperature: 78, risk: 0.89 },
   ],
-  pipeline: ['Raw sensor streams', 'Temporal alignment', 'Feature engineering', 'Classification', 'Anomaly signal'],
 };

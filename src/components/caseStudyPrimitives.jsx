@@ -36,11 +36,13 @@ export const LinearFlow = ({ steps }) => (
   </div>
 );
 
-// Numbered step cards connected by arrows, for a short (<=4) sequential
-// process — the "how I approached it" pattern shared by both case studies.
+// Numbered step cards connected by arrows, for a short sequential process —
+// the "how I approached it" pattern shared by both case studies. Wraps onto
+// multiple rows (rather than a fixed single row) so a 4th+ step never
+// overflows and gets clipped by the case-study card's overflow-hidden.
 // `step.number` overrides the auto-generated 01/02/03 index label.
 export const StepFlow = ({ steps }) => (
-  <div className="flex flex-col sm:flex-row items-stretch gap-3">
+  <div className="flex flex-wrap items-stretch gap-3">
     {steps.map((step, i) => (
       <React.Fragment key={step.title}>
         <div className="flex-1 min-w-[180px] bg-slate-50 border border-slate-200 rounded-xl p-5">

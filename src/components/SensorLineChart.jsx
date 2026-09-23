@@ -6,11 +6,11 @@ import React from 'react';
 // hairline baseline, and direct end-of-line value labels.
 const WIDTH = 280;
 const HEIGHT = 140;
-const PADDING = { top: 10, right: 40, bottom: 20, left: 10 };
+const PADDING = { top: 18, right: 46, bottom: 20, left: 10 };
 
-const toPoints = (series, dataKey, min, range) =>
+const toPoints = (series, dataKey, min, range, totalPoints) =>
   series.map((d, i) => ({
-    x: PADDING.left + (i / (series.length - 1)) * (WIDTH - PADDING.left - PADDING.right),
+    x: PADDING.left + (i / (totalPoints - 1)) * (WIDTH - PADDING.left - PADDING.right),
     y: PADDING.top + (1 - (d[dataKey] - min) / range) * (HEIGHT - PADDING.top - PADDING.bottom),
     value: d[dataKey],
   }));
@@ -23,10 +23,11 @@ const SensorLineChart = ({ title, unit, dataKey, normal, anomaly }) => {
   const max = Math.max(...values);
   const range = max - min || 1;
 
-  const normalPoints = toPoints(normal, dataKey, min, range);
-  const anomalyPoints = toPoints(anomaly, dataKey, min, range);
+  const normalPoints = toPoints(normal, dataKey, min, range, normal.length);
+  const anomalyPoints = toPoints(anomaly, dataKey, min, range, normal.length);
   const normalEnd = normalPoints[normalPoints.length - 1];
   const anomalyEnd = anomalyPoints[anomalyPoints.length - 1];
+  const showAnomaly = anomalyPoints.length > 0;
 
   return (
     <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
@@ -52,15 +53,18 @@ const SensorLineChart = ({ title, unit, dataKey, normal, anomaly }) => {
           stroke="#e2e8f0"
           strokeWidth="1"
         />
-        <path d={toPath(normalPoints)} fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
-        <path d={toPath(anomalyPoints)} fill="none" stroke="#d97706" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
-        <circle cx={normalEnd.x} cy={normalEnd.y} r="3" fill="#94a3b8" />
-        <circle cx={anomalyEnd.x} cy={anomalyEnd.y} r="3" fill="#d97706" />
-        <text x={normalEnd.x + 6} y={normalEnd.y + 3} fontSize="9" fill="#64748b">
-          {normalEnd.value}{unit}
-        </text>
-        <text x={anomalyEnd.x + 6} y={anomalyEnd.y + 3} fontSize="9" fill="#b45309">
-          {anomalyEnd.value}{unit}
+        <path d={toPath(normalPoints)} fill="none" stroke="#94a3b8" strokeWidth="2" strokeDasharray="4 3" strokeLinejoin="round" strokeLinecap="round" />
+        {showAnomaly && (
+          <>
+            <path d={toPath(anomalyPoints)} fill="none" stroke="#d97706" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
+            <circle cx={anomalyEnd.x} cy={anomalyEnd.y} r="3.5" fill="#d97706" />
+            <text x={anomalyEnd.x + 6} y={anomalyEnd.y + 3} fontSize="9" fill="#b45309" fontWeight="600">
+              {anomalyEnd.value}{unit}
+            </text>
+          </>
+        )}
+        <text x={normalEnd.x + 6} y={normalEnd.y - 6} fontSize="9" fill="#94a3b8">
+          baseline {normalEnd.value}{unit}
         </text>
       </svg>
     </div>
