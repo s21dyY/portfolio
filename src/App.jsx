@@ -107,13 +107,23 @@ const App = () => {
           <ExperienceItem
             title="Software Engineer Intern"
             org="SLB (Schlumberger)"
-            location="Sugar Land, TX"
+            location="Houston, TX"
             dates="Jun 2026 – Aug 2026"
             bullets={[
-              'Developed end-to-end automation software for the Reservoir Performance Team, streamlining test planning and reporting.',
-              'Automated a 16-hour VV planning workflow, targeting a 50% reduction in processing time and 0.4 FTE in labor savings.',
-              'Integrated a locally hosted LLM (Ollama) into the backend to generate structured plans and reports.',
-              'Designed a configuration-driven architecture to improve scalability and maintainability across future products.',
+              'Built end-to-end automation software for the Reservoir Performance Team, estimated to reduce verification and validation (V&V) test-document turnaround by 50% and save 0.4 FTE in engineering effort.',
+              'Integrated a locally hosted LLM (Ollama) into the backend to generate structured V&V plans and reports from product configurations and requirements.',
+              'Delivered the automation tool as both a local application and a web application on a shared backend, developing a scalable FastAPI layer to handle web requests.',
+              'Designed a scalable, configuration-driven architecture that adapts to new products with minimal code changes.',
+            ]}
+          />
+          <ExperienceItem
+            title="AI Response Analyst – Mathematics (part-time)"
+            org="Outlier AI"
+            location="Remote"
+            dates="Jul 2024 – Jul 2025"
+            bullets={[
+              'Compared and rated paired responses from two LLMs on college-level math problems (1,000+ evaluations), scoring accuracy, reasoning quality, relevance and instruction adherence against standardized rubrics.',
+              'Identified faulty assumptions, calculation errors and logical gaps, and wrote detailed rationales explaining each preference.',
             ]}
           />
           <ExperienceItem
@@ -122,10 +132,9 @@ const App = () => {
             location="Taipei, Taiwan"
             dates="Feb 2023 – Oct 2024"
             bullets={[
-              'Built end-to-end data pipelines supporting monthly retraining of attrition prediction models.',
-              'Optimized ETL workflows in partnership with data engineers, reducing operational costs by $2K per month.',
-              'Built Power BI dashboards tracking attrition and compensation benchmarks, cutting reporting time by 2 hrs/week.',
-              'Synthesized market and social media analytics into actionable insights to support client strategy.',
+              'Built end-to-end Power BI dashboards for attrition and compensation benchmarking across seven industries in Hong Kong, connected directly to internal databases so year-over-year changes update without manual work.',
+              'Built data pipelines supporting monthly retraining of attrition prediction models, enabling consistent model refresh cycles.',
+              'Optimized ETL workflows with data engineers, cutting operational costs by $2K per month.',
             ]}
           />
           <ExperienceItem
@@ -134,10 +143,17 @@ const App = () => {
             location="Taipei, Taiwan"
             dates="Dec 2021 – Dec 2022"
             bullets={[
-              'Developed ETL pipelines to ingest REST API data into SQL databases, enabling reliable downstream reporting.',
-              'Built Power BI dashboards tracking conversion rates and funnel drop-offs, enabling PMs to prioritize features.',
-              'Designed and analyzed A/B experiments to evaluate feature performance and inform product prioritization.',
-              'Automated reporting workflows, reducing manual work by 10 hours per week.',
+              'Designed and ran A/B experiments on ecommerce algorithms across Taiwanese customers, contributing to a 30% year-over-year sales increase.',
+              'Built real-time Power BI dashboards on ecommerce product performance, informing inventory and pricing decisions, saving 4 hours reporting per week.',
+            ]}
+          />
+          <ExperienceItem
+            title="Graduate Teaching Assistant"
+            org="Carnegie Mellon University"
+            location="Pittsburgh, PA"
+            dates="Dec 2025 – Present"
+            bullets={[
+              'Support students in Software Development in Python and A/B Testing: Design & Analysis (Aug 2026 – present), and previously Object-Oriented Programming in Java (Dec 2025 – Jun 2026).',
             ]}
             isLast
           />
@@ -149,7 +165,36 @@ const App = () => {
         <h2 className="text-4xl font-bold mb-12 text-slate-900">Featured Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    {/* SLB Reservoir Performance Automation — NDA-covered */}
+          
+          {/* RegRAG: Cited Answers from Pipeline Safety Regulations */}
+          <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div className="flex justify-between items-start mb-4">
+              <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                <FileSearch size={24} />
+              </div>
+              <div className="flex items-center gap-1.5 text-slate-400" title="Project in progress">
+                <Clock size={16} />
+                <span className="text-xs font-semibold uppercase tracking-wide">In Progress</span>
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-3">RegRAG: Cited Answers from Regulations</h3>
+            <p className="text-slate-600 leading-relaxed mb-6">
+              A retrieval-augmented QA system that answers questions over 49 CFR Part 192 (US pipeline safety regulations)
+              with the exact section cited, or an honest "not found" when the text doesn't cover the question. Chunks
+              regulations by section, combines dense embeddings with BM25 in a hybrid retriever, and generates answers
+              through a local Ollama model constrained to the retrieved text. Evaluated on a hand-written 40-question
+              benchmark for retrieval recall/MRR, citation accuracy, faithfulness, and refusal rate on unanswerable questions.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Python</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">FastAPI</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">RAG</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Hybrid Retrieval (FAISS + BM25)</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Ollama</span>
+            </div>
+          </div>
+          
+          {/* SLB Reservoir Performance Automation — NDA-covered */}
           <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
               <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
@@ -222,34 +267,6 @@ const App = () => {
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Next.js</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Supabase</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Groq AI</span>
-            </div>
-          </div>
-
-          {/* RegRAG: Cited Answers from Pipeline Safety Regulations */}
-          <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-            <div className="flex justify-between items-start mb-4">
-              <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                <FileSearch size={24} />
-              </div>
-              <div className="flex items-center gap-1.5 text-slate-400" title="Project in progress">
-                <Clock size={16} />
-                <span className="text-xs font-semibold uppercase tracking-wide">In Progress</span>
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-3">RegRAG: Cited Answers from Regulations</h3>
-            <p className="text-slate-600 leading-relaxed mb-6">
-              A retrieval-augmented QA system that answers questions over 49 CFR Part 192 (US pipeline safety regulations)
-              with the exact section cited, or an honest "not found" when the text doesn't cover the question. Chunks
-              regulations by section, combines dense embeddings with BM25 in a hybrid retriever, and generates answers
-              through a local Ollama model constrained to the retrieved text. Evaluated on a hand-written 40-question
-              benchmark for retrieval recall/MRR, citation accuracy, faithfulness, and refusal rate on unanswerable questions.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Python</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">FastAPI</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">RAG</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Hybrid Retrieval (FAISS + BM25)</span>
-              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Ollama</span>
             </div>
           </div>
 
