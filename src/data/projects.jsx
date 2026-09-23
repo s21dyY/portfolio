@@ -1,7 +1,7 @@
-import { Snowflake, CookingPot, BarChart3, FileSearch } from 'lucide-react';
+import { CookingPot, BarChart3, FileSearch } from 'lucide-react';
 
-// The SLB V&V Automation Platform is the portfolio's centerpiece and lives in
-// data/caseStudy.js + components/CaseStudy.jsx instead of this grid.
+// SLB (data/caseStudy.js) and MSA Safety (data/msaCaseStudy.js) are the portfolio's
+// two featured case studies and live in components/FeaturedWork.jsx instead of this grid.
 export const projects = [
   {
     id: 'regrag',
@@ -14,14 +14,6 @@ export const projects = [
       through a local Ollama model constrained to the retrieved text. Evaluated on a hand-written 40-question
       benchmark for retrieval recall/MRR, citation accuracy, faithfulness, and refusal rate on unanswerable questions.`,
     tags: ['Python', 'FastAPI', 'RAG', 'Hybrid Retrieval (FAISS + BM25)', 'Ollama'],
-  },
-  {
-    id: 'refrigerant-leak',
-    icon: <Snowflake size={24} />,
-    title: 'Refrigerant Leak Detection',
-    status: 'nda',
-    description: `Partnered with an industry sponsor through CMU's Corporate Startup Lab as the data scientist on a cross-functional team. Built an end-to-end classification pipeline in Python, including cleaning multi-sensor time-series data, engineering features to capture leak signatures, and iterating on model selection and hyperparameters. Reaching 80% classification accuracy while cutting false positives to 10%, reducing unnecessary maintenance callouts.`,
-    tags: ['Python', 'XGBoost', 'Feature Engineering', 'Classification Modeling'],
   },
   {
     id: 'what-to-eat',

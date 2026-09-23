@@ -2,9 +2,8 @@ import React, { useRef, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
-import CaseStudy from './components/CaseStudy';
+import FeaturedWork from './components/FeaturedWork';
 import Projects from './components/Projects';
-import { slbCaseStudy } from './data/caseStudy';
 
 const App = () => {
   const [highlightedIds, setHighlightedIds] = useState([]);
@@ -14,9 +13,7 @@ const App = () => {
     if (!ids?.length) return;
 
     setHighlightedIds(ids);
-    const targetId = ids.includes('case-study-slb')
-      ? slbCaseStudy.anchorId
-      : `project-${ids[0]}`;
+    const targetId = ids[0].startsWith('case-study-') ? ids[0] : `project-${ids[0]}`;
     document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
     clearTimeout(highlightTimeout.current);
@@ -28,7 +25,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Skills onShowEvidence={handleShowEvidence} />
-      <CaseStudy highlighted={highlightedIds.includes('case-study-slb')} />
+      <FeaturedWork highlightedIds={highlightedIds} />
       <Projects highlightedIds={highlightedIds} />
     </div>
   );

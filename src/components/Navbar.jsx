@@ -12,7 +12,7 @@ const Navbar = () => (
     </div>
     <div className="hidden md:flex gap-8 items-center font-medium text-slate-600">
       <a href="#experience" onClick={scrollToId('experience')} className="hover:text-amber-600 transition">Experience</a>
-      <a href="#case-study-slb" onClick={scrollToId('case-study-slb')} className="hover:text-amber-600 transition">Case Study</a>
+      <a href="#featured-work" onClick={scrollToId('featured-work')} className="hover:text-amber-600 transition">Featured Work</a>
       <a href="#projects" onClick={scrollToId('projects')} className="hover:text-amber-600 transition">Projects</a>
       <a href="mailto:sandy.yang992@gmail.com">
         <button className="bg-amber-600 text-white px-6 py-2 rounded-full hover:bg-amber-700 transition shadow-md">
