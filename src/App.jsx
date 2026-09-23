@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import {
   Github, Linkedin, Mail, Layers, Pen, Coffee, ExternalLink, Database,
   Code, Terminal, Spotlight, MonitorCog, CaseUpper, BarChart3, CookingPot,
-  Lock, Cpu, Snowflake, Briefcase } from 'lucide-react';
+  Lock, Cpu, Snowflake, Briefcase, FileSearch, Clock } from 'lucide-react';
 
 const App = () => {
   return (
@@ -222,6 +222,34 @@ const App = () => {
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Next.js</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Supabase</span>
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Groq AI</span>
+            </div>
+          </div>
+
+          {/* RegRAG: Cited Answers from Pipeline Safety Regulations */}
+          <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div className="flex justify-between items-start mb-4">
+              <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                <FileSearch size={24} />
+              </div>
+              <div className="flex items-center gap-1.5 text-slate-400" title="Project in progress">
+                <Clock size={16} />
+                <span className="text-xs font-semibold uppercase tracking-wide">In Progress</span>
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-3">RegRAG: Cited Answers from Regulations</h3>
+            <p className="text-slate-600 leading-relaxed mb-6">
+              A retrieval-augmented QA system that answers questions over 49 CFR Part 192 (US pipeline safety regulations)
+              with the exact section cited, or an honest "not found" when the text doesn't cover the question. Chunks
+              regulations by section, combines dense embeddings with BM25 in a hybrid retriever, and generates answers
+              through a local Ollama model constrained to the retrieved text. Evaluated on a hand-written 40-question
+              benchmark for retrieval recall/MRR, citation accuracy, faithfulness, and refusal rate on unanswerable questions.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Python</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">FastAPI</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">RAG</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Hybrid Retrieval (FAISS + BM25)</span>
+              <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">Ollama</span>
             </div>
           </div>
 
