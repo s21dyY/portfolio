@@ -1,5 +1,4 @@
 import React from 'react';
-import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Pen } from 'lucide-react';
 
@@ -14,22 +13,13 @@ const Hero = () => (
         Hi, I'm <span className="text-amber-600">Sandy!</span>
       </h1>
 
-      <div className="text-2xl md:text-3xl flex gap-3 justify-center text-slate-600 h-10">
-        <span>I am a </span>
-        <span className="font-bold text-slate-900">
-          <Typewriter
-            options={{
-              strings: ['ML Engineer', 'Data Scientist', 'Data Storyteller'],
-              autoStart: true,
-              loop: true,
-            }}
-          />
-        </span>
-      </div>
+      <p className="text-2xl md:text-3xl font-bold text-slate-900">Software Engineer</p>
+      <p className="text-lg md:text-xl font-semibold text-amber-600 mt-2">
+        Python · Backend · APIs · Full Stack
+      </p>
 
       <p className="max-w-2xl mt-6 text-lg text-slate-500 leading-relaxed">
-        I help turn messy data and workflows into tools people
-        actually use.
+        With experience applying AI/ML to real engineering problems.
       </p>
       <div className="flex gap-6 justify-center mt-8">
         <a href="https://github.com/s21dyY" target="_blank" rel="noreferrer">

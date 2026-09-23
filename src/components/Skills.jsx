@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { skillCategories, categoryStyles, activeTabPill, badgeContainerVariants } from '../data/skills';
 import SkillBadge from './SkillBadge';
 
-const Skills = () => {
+const Skills = ({ onShowEvidence }) => {
   const [activeCategory, setActiveCategory] = useState('Languages');
 
   return (
@@ -56,6 +56,8 @@ const Skills = () => {
               icon={skill.icon}
               text={skill.text}
               styles={categoryStyles[activeCategory]}
+              evidence={skill.evidence}
+              onShowEvidence={onShowEvidence}
             />
           ))}
         </motion.div>

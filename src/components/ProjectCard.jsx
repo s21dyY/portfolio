@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Lock, Clock, Github, ExternalLink } from 'lucide-react';
 
 const StatusBadge = ({ status, githubUrl, demoUrl }) => {
@@ -36,8 +37,17 @@ const StatusBadge = ({ status, githubUrl, demoUrl }) => {
   );
 };
 
-const ProjectCard = ({ icon, title, description, tags, status, githubUrl, demoUrl }) => (
-  <div className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+const ProjectCard = ({ id, icon, title, description, tags, status, githubUrl, demoUrl, highlighted }) => (
+  <motion.div
+    id={`project-${id}`}
+    animate={
+      highlighted
+        ? { boxShadow: '0 0 0 4px rgba(217,119,6,0.4)' }
+        : { boxShadow: '0 0 0 0px rgba(217,119,6,0)' }
+    }
+    transition={{ duration: 0.4 }}
+    className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+  >
     <div className="flex justify-between items-start mb-4">
       <div className="p-3 bg-blue-50 text-amber-600 rounded-lg group-hover:bg-amber-600 group-hover:text-white transition-colors">
         {icon}
@@ -53,7 +63,7 @@ const ProjectCard = ({ icon, title, description, tags, status, githubUrl, demoUr
         </span>
       ))}
     </div>
-  </div>
+  </motion.div>
 );
 
 export default ProjectCard;

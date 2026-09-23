@@ -1,7 +1,10 @@
-import { Cpu, Snowflake, CookingPot, BarChart3, FileSearch } from 'lucide-react';
+import { Snowflake, CookingPot, BarChart3, FileSearch } from 'lucide-react';
 
+// The SLB V&V Automation Platform is the portfolio's centerpiece and lives in
+// data/caseStudy.js + components/CaseStudy.jsx instead of this grid.
 export const projects = [
   {
+    id: 'regrag',
     icon: <FileSearch size={24} />,
     title: 'RegRAG: Cited Answers from Regulations',
     status: 'in-progress',
@@ -13,24 +16,15 @@ export const projects = [
     tags: ['Python', 'FastAPI', 'RAG', 'Hybrid Retrieval (FAISS + BM25)', 'Ollama'],
   },
   {
-    icon: <Cpu size={24} />,
-    title: 'Reservoir Performance Automation',
-    status: 'nda',
-    description: `Built during my Software Engineer internship at SLB (Schlumberger). Designed a configuration-driven
-      automation platform that turns engineering requirements into standardized test plans and reports,
-      with a locally-hosted LLM generating structured documentation to cut a manual planning process from
-      roughly 16 hours down to a fraction of that. Internal workflows, data, and proprietary logic are
-      covered under a signed NDA and aren't shown here.`,
-    tags: ['Python', 'LLM Integration', 'Ollama', 'Workflow Automation'],
-  },
-  {
+    id: 'refrigerant-leak',
     icon: <Snowflake size={24} />,
     title: 'Refrigerant Leak Detection',
     status: 'nda',
     description: `Partnered with an industry sponsor through CMU's Corporate Startup Lab as the data scientist on a cross-functional team. Built an end-to-end classification pipeline in Python, including cleaning multi-sensor time-series data, engineering features to capture leak signatures, and iterating on model selection and hyperparameters. Reaching 80% classification accuracy while cutting false positives to 10%, reducing unnecessary maintenance callouts.`,
-    tags: ['Python', 'Feature Engineering', 'Classification Modeling', 'Predictive Modeling'],
+    tags: ['Python', 'XGBoost', 'Feature Engineering', 'Classification Modeling'],
   },
   {
+    id: 'what-to-eat',
     icon: <CookingPot size={24} />,
     title: 'What To Eat Today',
     status: 'links',
@@ -40,6 +34,7 @@ export const projects = [
     tags: ['TypeScript', 'Next.js', 'Supabase', 'Groq AI'],
   },
   {
+    id: 'sentiment-analysis',
     icon: <BarChart3 size={24} />,
     title: 'Sentiment Analysis',
     status: 'links',

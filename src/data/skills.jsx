@@ -5,29 +5,32 @@ import {
   Layers, Sparkles,
 } from 'lucide-react';
 
+// `evidence` points a skill at the project(s) that prove it — either a regular
+// project id (see data/projects.jsx) or 'case-study-slb' for the SLB centerpiece.
+// Skills with no direct project on the page are left unlinked rather than forced.
 export const skillCategories = {
   Languages: [
-    { icon: <Code size={18} />, text: 'Python' },
+    { icon: <Code size={18} />, text: 'Python', evidence: ['case-study-slb'] },
     { icon: <Coffee size={18} />, text: 'Java' },
-    { icon: <FileCode2 size={18} />, text: 'JavaScript / TypeScript' },
+    { icon: <FileCode2 size={18} />, text: 'JavaScript / TypeScript', evidence: ['what-to-eat'] },
     { icon: <Database size={18} />, text: 'SQL' },
     { icon: <Sigma size={18} />, text: 'R' },
   ],
   'Software & APIs': [
-    { icon: <Zap size={18} />, text: 'FastAPI' },
-    { icon: <Webhook size={18} />, text: 'REST APIs' },
-    { icon: <Atom size={18} />, text: 'React' },
-    { icon: <Component size={18} />, text: 'Next.js' },
+    { icon: <Zap size={18} />, text: 'FastAPI', evidence: ['case-study-slb', 'regrag'] },
+    { icon: <Webhook size={18} />, text: 'REST APIs', evidence: ['case-study-slb', 'regrag'] },
+    { icon: <Atom size={18} />, text: 'React', evidence: ['what-to-eat'] },
+    { icon: <Component size={18} />, text: 'Next.js', evidence: ['what-to-eat'] },
     { icon: <GitBranch size={18} />, text: 'Git' },
-    { icon: <Server size={18} />, text: 'Backend Integration' },
-    { icon: <Workflow size={18} />, text: 'Workflow Automation' },
+    { icon: <Server size={18} />, text: 'Backend Integration', evidence: ['case-study-slb'] },
+    { icon: <Workflow size={18} />, text: 'Workflow Automation', evidence: ['case-study-slb'] },
   ],
   'Data & AI': [
-    { icon: <Bot size={18} />, text: 'LLM Integration (Ollama, Groq API)' },
+    { icon: <Bot size={18} />, text: 'LLM Integration (Ollama, Groq API)', evidence: ['case-study-slb', 'what-to-eat'] },
     { icon: <Combine size={18} />, text: 'ETL / Data Pipelines' },
-    { icon: <TreePine size={18} />, text: 'XGBoost' },
+    { icon: <TreePine size={18} />, text: 'XGBoost', evidence: ['refrigerant-leak'] },
     { icon: <Spotlight size={18} />, text: 'Power BI' },
-    { icon: <FileSearch size={18} />, text: 'RAG' },
+    { icon: <FileSearch size={18} />, text: 'RAG', evidence: ['regrag'] },
     { icon: <Cloud size={18} />, text: 'AWS' },
     { icon: <CloudCog size={18} />, text: 'GCP' },
   ],
