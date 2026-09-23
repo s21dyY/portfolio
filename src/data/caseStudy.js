@@ -3,6 +3,8 @@ export const slbCaseStudy = {
   anchorId: 'case-study-slb',
   title: 'SLB — V&V Automation Platform',
   role: 'Software Engineer Intern · Jun 2026 – Aug 2026',
+  summary: 'A configuration-driven automation platform that turns engineering requirements into standardized V&V test plans and reports, with a locally-hosted LLM generating the documentation.',
+  tags: ['Python', 'FastAPI', 'Ollama', 'Workflow Automation'],
   problem: 'Engineers manually generated V&V (verification and validation) test documents for every new product — a repetitive, error-prone process that ate hours better spent on engineering work.',
   engineering: [
     {
