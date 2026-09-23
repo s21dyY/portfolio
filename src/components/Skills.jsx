@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { skillCategories, categoryStyles, badgeContainerVariants } from '../data/skills';
+import { skillCategories, categoryStyles, activeTabPill, badgeContainerVariants } from '../data/skills';
 import SkillBadge from './SkillBadge';
 
 const Skills = () => {
@@ -23,7 +23,7 @@ const Skills = () => {
               {isActive && (
                 <motion.span
                   layoutId="skillTabPill"
-                  className={`absolute inset-0 rounded-full ${styles.pill}`}
+                  className={`absolute inset-0 rounded-full ${activeTabPill}`}
                   transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                 />
               )}

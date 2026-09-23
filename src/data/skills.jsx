@@ -33,24 +33,25 @@ export const skillCategories = {
   ],
 };
 
+// The active-tab pill is a single shared color across categories (see Skills.jsx),
+// so the layoutId animation only has to morph shape/position, never color mid-flight.
+export const activeTabPill = 'bg-amber-600 shadow-lg shadow-amber-200';
+
 export const categoryStyles = {
   Languages: {
     tabIcon: <Code size={16} />,
-    pill: 'bg-amber-600 shadow-lg shadow-amber-200',
     idleText: 'text-amber-700 hover:bg-amber-50',
     badge: 'from-amber-50 to-amber-100 border-amber-200 text-amber-800 hover:shadow-amber-200',
     bubble: 'bg-amber-600',
   },
   'Software & APIs': {
     tabIcon: <Layers size={16} />,
-    pill: 'bg-orange-600 shadow-lg shadow-orange-200',
     idleText: 'text-orange-700 hover:bg-orange-50',
     badge: 'from-orange-50 to-orange-100 border-orange-200 text-orange-800 hover:shadow-orange-200',
     bubble: 'bg-orange-600',
   },
   'Data & AI': {
     tabIcon: <Sparkles size={16} />,
-    pill: 'bg-rose-600 shadow-lg shadow-rose-200',
     idleText: 'text-rose-700 hover:bg-rose-50',
     badge: 'from-rose-50 to-rose-100 border-rose-200 text-rose-800 hover:shadow-rose-200',
     bubble: 'bg-rose-600',
