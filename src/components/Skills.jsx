@@ -17,7 +17,7 @@ const Skills = () => {
               key={category}
               onClick={() => setActiveCategory(category)}
               className={`relative px-5 py-2.5 rounded-full text-sm font-semibold transition-colors overflow-hidden ${
-                isActive ? 'text-white' : `bg-white border border-slate-200 ${styles.idleText}`
+                isActive ? `text-white ${activeTabPill}` : `bg-white border border-slate-200 ${styles.idleText}`
               }`}
             >
               {isActive && (
