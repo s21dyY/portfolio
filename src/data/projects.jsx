@@ -8,6 +8,7 @@ export const projects = [
     icon: <FileSearch size={24} />,
     title: 'RegRAG: Cited Answers from Regulations',
     status: 'in-progress',
+    githubUrl: 'https://github.com/s21dyY/RAG_QA_Citation',
     description: `A retrieval-augmented QA system that answers questions over 49 CFR Part 192 (US pipeline safety regulations)
       with the exact section cited, or an honest "not found" when the text doesn't cover the question. Chunks
       regulations by section, combines dense embeddings with BM25 in a hybrid retriever, and generates answers
