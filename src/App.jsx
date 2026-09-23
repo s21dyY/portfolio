@@ -1,12 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Typewriter from 'typewriter-effect';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Github, Linkedin, Mail, Layers, Pen, Coffee, ExternalLink, Database,
-  Code, Terminal, Spotlight, MonitorCog, CaseUpper, BarChart3, CookingPot,
-  Lock, Cpu, Snowflake, Briefcase, FileSearch, Clock } from 'lucide-react';
+  Code, Spotlight, BarChart3, CookingPot,
+  Lock, Cpu, Snowflake, Briefcase, FileSearch, Clock, FileCode2, Sigma,
+  Zap, Webhook, Atom, Component, GitBranch, Server, Workflow, Bot,
+  Combine, TreePine, Cloud, CloudCog } from 'lucide-react';
+
+const skillCategories = {
+  Languages: [
+    { icon: <Code size={18} />, text: 'Python' },
+    { icon: <Coffee size={18} />, text: 'Java' },
+    { icon: <FileCode2 size={18} />, text: 'JavaScript / TypeScript' },
+    { icon: <Database size={18} />, text: 'SQL' },
+    { icon: <Sigma size={18} />, text: 'R' },
+  ],
+  'Software & APIs': [
+    { icon: <Zap size={18} />, text: 'FastAPI' },
+    { icon: <Webhook size={18} />, text: 'REST APIs' },
+    { icon: <Atom size={18} />, text: 'React' },
+    { icon: <Component size={18} />, text: 'Next.js' },
+    { icon: <GitBranch size={18} />, text: 'Git' },
+    { icon: <Server size={18} />, text: 'Backend Integration' },
+    { icon: <Workflow size={18} />, text: 'Workflow Automation' },
+  ],
+  'Data & AI': [
+    { icon: <Bot size={18} />, text: 'LLM Integration (Ollama, Groq API)' },
+    { icon: <Combine size={18} />, text: 'ETL / Data Pipelines' },
+    { icon: <TreePine size={18} />, text: 'XGBoost' },
+    { icon: <Spotlight size={18} />, text: 'Power BI' },
+    { icon: <FileSearch size={18} />, text: 'RAG' },
+    { icon: <Cloud size={18} />, text: 'AWS' },
+    { icon: <CloudCog size={18} />, text: 'GCP' },
+  ],
+};
 
 const App = () => {
+  const [activeCategory, setActiveCategory] = useState('Languages');
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
       {/* Navigation */}
@@ -86,18 +118,39 @@ const App = () => {
         </motion.div>
       </header>
 
-      {/* Skills Row */}
-      <div className="flex flex-wrap justify-center gap-3 px-6 pb-20 pt-10 max-w-4xl mx-auto">
-        <SkillBadge icon={<Database size={18}/>} text="SQL" />
-        <SkillBadge icon={<Code size={18}/>} text="Python" />
-        <SkillBadge icon={<Terminal size={18}/>} text="PyTorch"/>
-        <SkillBadge icon={<Terminal size={18}/>} text="TensorFlow"/>
-        <SkillBadge icon={<Coffee size={18}/>} text="Java" />
-        <SkillBadge icon={<Spotlight size={18}/>} text="Power BI" />
-         <SkillBadge icon={<Cpu size={18}/>} text="Distributed Systems" />
-        <SkillBadge icon={<CaseUpper size={18}/>} text="AB Testing" />
-        <SkillBadge icon={<MonitorCog size={18}/>} text="Machine Learning" />
-      </div>
+      {/* Skills & Tools */}
+      <section id="skills" className="px-6 pb-20 pt-10 max-w-4xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {Object.keys(skillCategories).map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
+                activeCategory === category
+                  ? 'bg-amber-600 text-white shadow-md'
+                  : 'bg-white text-slate-600 border border-slate-200 hover:border-amber-300 hover:text-amber-600'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeCategory}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="flex flex-wrap justify-center gap-3"
+          >
+            {skillCategories[activeCategory].map((skill) => (
+              <SkillBadge key={skill.text} icon={skill.icon} text={skill.text} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
+      </section>
 
       {/* Experience */}
       <section id="experience" className="px-[10%] py-20 bg-white">
