@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
 import FeaturedWork from './components/FeaturedWork';
 import Projects from './components/Projects';
 
@@ -25,6 +26,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Skills onShowEvidence={handleShowEvidence} />
+      <Experience />
       <FeaturedWork highlightedIds={highlightedIds} />
       <Projects highlightedIds={highlightedIds} />
     </div>
