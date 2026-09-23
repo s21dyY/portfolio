@@ -2,7 +2,7 @@ import React from 'react';
 import { Snowflake } from 'lucide-react';
 import { msaCaseStudy } from '../data/msaCaseStudy';
 import CaseStudyCard from './CaseStudyCard';
-import { SectionLabel, StepFlow, FactorStack, LinearFlow, StatRow } from './caseStudyPrimitives';
+import { SectionLabel, StepFlow, FactorStack, StatRow } from './caseStudyPrimitives';
 
 const MsaCaseStudy = ({ highlighted }) => (
   <CaseStudyCard
@@ -32,13 +32,14 @@ const MsaCaseStudy = ({ highlighted }) => (
     </div>
 
     <div className="mb-10">
-      <SectionLabel>The ML Pipeline</SectionLabel>
-      <LinearFlow steps={msaCaseStudy.pipeline} />
+      <SectionLabel>From Sensor Data to Prediction</SectionLabel>
+      <StepFlow steps={msaCaseStudy.pipelineSteps} />
     </div>
 
     <div>
       <SectionLabel>The Result</SectionLabel>
       <StatRow stats={msaCaseStudy.result} />
+      <p className="text-slate-600 leading-relaxed mt-4 max-w-2xl">{msaCaseStudy.resultNote}</p>
     </div>
   </CaseStudyCard>
 );

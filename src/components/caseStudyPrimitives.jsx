@@ -22,20 +22,6 @@ export const FlowBox = ({ children, accent, muted }) => (
 
 export const FlowArrow = () => <ChevronDown size={20} className="text-slate-300" />;
 
-// A straight vertical chain of steps (used by MSA's ML pipeline).
-export const LinearFlow = ({ steps }) => (
-  <div className="flex flex-col items-center gap-2 py-2">
-    {steps.map((step, i) => (
-      <React.Fragment key={step}>
-        <FlowBox muted={i !== steps.length - 1} accent={i === steps.length - 1}>
-          {step}
-        </FlowBox>
-        {i < steps.length - 1 && <FlowArrow />}
-      </React.Fragment>
-    ))}
-  </div>
-);
-
 // Numbered step cards connected by arrows — the "how I approached it" pattern
 // shared by both case studies' Challenge sections.
 export const StepFlow = ({ steps }) => (

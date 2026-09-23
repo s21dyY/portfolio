@@ -1,6 +1,6 @@
 import React from 'react';
 import { Cpu, ArrowRight } from 'lucide-react';
-import { slbCaseStudy } from '../data/caseStudy';
+import { slbCaseStudy } from '../data/slbCaseStudy';
 import CaseStudyCard from './CaseStudyCard';
 import { SectionLabel, StepFlow, FlowBox, FlowArrow, StatRow } from './caseStudyPrimitives';
 

@@ -29,16 +29,26 @@ export const msaCaseStudy = {
       description: 'Evaluated not just overall accuracy but false positives, since unnecessary maintenance alerts would reduce the tool\'s usefulness in practice.',
     },
   ],
-  pipeline: [
-    'Sensor Data',
-    'Cleaning',
-    'Feature Engineering',
-    'Train / Validate',
-    'XGBoost',
-    'Leak Prediction',
+  // Kept intentionally generic where the specific technique isn't confirmed —
+  // e.g. no claim of class balancing or a named alternate model. See TODOs below
+  // for what would sharpen this section further once confirmed.
+  pipelineSteps: [
+    {
+      title: 'Explore',
+      description: 'Studied the raw multi-sensor HVAC time-series readings to understand what leak behavior looked like before building anything.',
+    },
+    {
+      title: 'Prepare',
+      description: 'Cleaned the sensor readings and engineered features to capture leak signatures ahead of training.',
+    },
+    {
+      title: 'Model',
+      description: 'Compared model types and tuned hyperparameters, settling on an XGBoost classifier for the final pipeline.',
+    },
   ],
   result: [
     { value: '80%', label: 'Classification accuracy' },
     { value: '10%', label: 'False-positive rate' },
   ],
+  resultNote: 'A model that detects leaks but generates too many false alarms isn\'t useful operationally, so we evaluated false-positive behavior alongside overall accuracy — not accuracy in isolation.',
 };
