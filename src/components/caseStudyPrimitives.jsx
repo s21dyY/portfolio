@@ -22,14 +22,29 @@ export const FlowBox = ({ children, accent, muted }) => (
 
 export const FlowArrow = () => <ChevronDown size={20} className="text-slate-300" />;
 
-// Numbered step cards connected by arrows — the "how I approached it" pattern
-// shared by both case studies' Challenge sections.
+// A straight vertical chain of steps (used by MSA's demo pipeline).
+export const LinearFlow = ({ steps }) => (
+  <div className="flex flex-col items-center gap-2 py-2">
+    {steps.map((step, i) => (
+      <React.Fragment key={step}>
+        <FlowBox muted={i !== steps.length - 1} accent={i === steps.length - 1}>
+          {step}
+        </FlowBox>
+        {i < steps.length - 1 && <FlowArrow />}
+      </React.Fragment>
+    ))}
+  </div>
+);
+
+// Numbered step cards connected by arrows, for a short (<=4) sequential
+// process — the "how I approached it" pattern shared by both case studies.
+// `step.number` overrides the auto-generated 01/02/03 index label.
 export const StepFlow = ({ steps }) => (
   <div className="flex flex-col sm:flex-row items-stretch gap-3">
     {steps.map((step, i) => (
       <React.Fragment key={step.title}>
         <div className="flex-1 min-w-[180px] bg-slate-50 border border-slate-200 rounded-xl p-5">
-          <p className="text-xs font-bold text-amber-600 mb-2">{String(i + 1).padStart(2, '0')}</p>
+          <p className="text-xs font-bold text-amber-600 mb-2">{step.number ?? String(i + 1).padStart(2, '0')}</p>
           <p className="font-semibold text-slate-900 mb-1">{step.title}</p>
           <p className="text-sm text-slate-500 leading-relaxed">{step.description}</p>
         </div>
@@ -43,17 +58,41 @@ export const StepFlow = ({ steps }) => (
   </div>
 );
 
-// Short phrases stacked with "+" between them — for factors that combine into
-// one constraint (used by MSA's Challenge section).
-export const FactorStack = ({ items }) => (
-  <div className="flex flex-col items-center gap-2">
+// A responsive grid of numbered cards with no connecting arrows — for a
+// longer sequential list (e.g. a 6-stage technical pipeline) where a single
+// connected row would overflow the card.
+export const StepGrid = ({ items }) => (
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {items.map((item, i) => (
-      <React.Fragment key={item}>
-        {i > 0 && <span className="text-slate-300 text-lg font-bold leading-none">+</span>}
-        <div className="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm font-semibold text-slate-700 text-center">
-          {item}
-        </div>
-      </React.Fragment>
+      <div key={item.title} className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p className="text-xs font-bold text-amber-600 mb-2">{item.number ?? String(i + 1).padStart(2, '0')}</p>
+        <p className="font-semibold text-slate-900 mb-1">{item.title}</p>
+        <p className="text-sm text-slate-500 leading-relaxed">{item.description}</p>
+      </div>
+    ))}
+  </div>
+);
+
+// A grid of parallel (non-sequential) factor cards — no numbering, since
+// order doesn't matter (e.g. co-occurring constraints in a Challenge section).
+export const CardGrid = ({ items }) => (
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    {items.map((item) => (
+      <div key={item.title} className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p className="font-semibold text-slate-900 mb-1">{item.title}</p>
+        <p className="text-sm text-slate-500 leading-relaxed">{item.description}</p>
+      </div>
+    ))}
+  </div>
+);
+
+// A row of small pill tags — for feature-group examples, eval metrics, etc.
+export const TagList = ({ items }) => (
+  <div className="flex flex-wrap gap-2">
+    {items.map((item) => (
+      <span key={item} className="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold uppercase">
+        {item}
+      </span>
     ))}
   </div>
 );

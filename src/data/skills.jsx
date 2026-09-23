@@ -7,11 +7,11 @@ import {
 
 // `evidence` points a skill at the project(s) that prove it — either a regular
 // project id (see data/projects.jsx) or a 'case-study-*' anchor for a featured
-// case study (see data/caseStudy.js, data/msaCaseStudy.js). Skills with no
+// case study (see data/slbCaseStudy.js, data/msaCaseStudy.js). Skills with no
 // direct project on the page are left unlinked rather than forced.
 export const skillCategories = {
   Languages: [
-    { icon: <Code size={18} />, text: 'Python', evidence: ['case-study-slb'] },
+    { icon: <Code size={18} />, text: 'Python', evidence: ['case-study-slb', 'case-study-msa'] },
     { icon: <Coffee size={18} />, text: 'Java' },
     { icon: <FileCode2 size={18} />, text: 'JavaScript / TypeScript', evidence: ['what-to-eat'] },
     { icon: <Database size={18} />, text: 'SQL' },
@@ -28,8 +28,8 @@ export const skillCategories = {
   ],
   'Data & AI': [
     { icon: <Bot size={18} />, text: 'LLM Integration (Ollama, Groq API)', evidence: ['case-study-slb', 'what-to-eat'] },
-    { icon: <Combine size={18} />, text: 'ETL / Data Pipelines' },
-    { icon: <TreePine size={18} />, text: 'XGBoost', evidence: ['case-study-msa'] },
+    { icon: <Combine size={18} />, text: 'ETL / Data Pipelines', evidence: ['case-study-msa'] },
+    { icon: <TreePine size={18} />, text: 'XGBoost' },
     { icon: <Spotlight size={18} />, text: 'Power BI' },
     { icon: <FileSearch size={18} />, text: 'RAG', evidence: ['regrag'] },
     { icon: <Cloud size={18} />, text: 'AWS' },

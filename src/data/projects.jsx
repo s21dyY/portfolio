@@ -1,6 +1,6 @@
 import { CookingPot, BarChart3, FileSearch } from 'lucide-react';
 
-// SLB (data/caseStudy.js) and MSA Safety (data/msaCaseStudy.js) are the portfolio's
+// SLB (data/slbCaseStudy.js) and MSA Safety (data/msaCaseStudy.js) are the portfolio's
 // two featured case studies and live in components/FeaturedWork.jsx instead of this grid.
 export const projects = [
   {
