@@ -24,11 +24,11 @@ export const skillCategories = {
     { icon: <Component size={18} />, text: 'Next.js', evidence: ['what-to-eat'] },
     { icon: <GitBranch size={18} />, text: 'Git' },
     { icon: <Server size={18} />, text: 'Backend Integration', evidence: ['case-study-slb'] },
-    { icon: <Workflow size={18} />, text: 'Workflow Automation', evidence: ['case-study-slb'] },
+    { icon: <Workflow size={18} />, text: 'Workflow Automation', evidence: ['case-study-slb', 'job-finder'] },
   ],
   'Data & AI': [
     { icon: <Bot size={18} />, text: 'LLM Integration (Ollama, Groq API)', evidence: ['case-study-slb', 'what-to-eat'] },
-    { icon: <Combine size={18} />, text: 'ETL / Data Pipelines', evidence: ['case-study-msa'] },
+    { icon: <Combine size={18} />, text: 'ETL / Data Pipelines', evidence: ['case-study-msa', 'job-finder'] },
     { icon: <TreePine size={18} />, text: 'XGBoost' },
     { icon: <Spotlight size={18} />, text: 'Power BI' },
     { icon: <FileSearch size={18} />, text: 'RAG', evidence: ['regrag'] },

@@ -1,4 +1,4 @@
-import { CookingPot, BarChart3, FileSearch } from 'lucide-react';
+import { CookingPot, BarChart3, FileSearch, BriefcaseBusiness } from 'lucide-react';
 
 // SLB (data/slbCaseStudy.js) and MSA Safety (data/msaCaseStudy.js) are the portfolio's
 // two featured case studies and live in components/FeaturedWork.jsx instead of this grid.
@@ -15,6 +15,19 @@ export const projects = [
       through a local Ollama model constrained to the retrieved text. Evaluated on a hand-written 40-question
       benchmark for retrieval recall/MRR, citation accuracy, faithfulness, and refusal rate on unanswerable questions.`,
     tags: ['Python', 'FastAPI', 'RAG', 'Hybrid Retrieval (FAISS + BM25)', 'Ollama'],
+  },
+  {
+    id: 'job-finder',
+    icon: <BriefcaseBusiness size={24} />,
+    title: 'Find Sandy a Job: Automated Job Finder',
+    status: 'links',
+    githubUrl: 'https://github.com/s21dyY/find-sandy-a-job',
+    description: `A scheduled pipeline that checks company job boards every 3 hours and sends me a Discord alert for new-grad
+      data roles that fit my resume. It pulls postings from Greenhouse, Lever, Ashby, Workable, Workday, and iCIMS, filters
+      them by title, location, and posting age, and uses Claude to give each one a 0–100 fit score. For strong matches it
+      tailors my resume to the job description and renders it as a PDF. A check rejects any skill, number, or experience
+      that isn't in the original resume. Runs on GitHub Actions or macOS launchd.`,
+    tags: ['Python', 'Claude API', 'GitHub Actions', 'Web Scraping', 'Discord Webhooks'],
   },
   {
     id: 'what-to-eat',
